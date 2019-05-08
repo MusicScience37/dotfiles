@@ -15,3 +15,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
+" activate the numeric keypad
+if &term =~ "xterm" || &term =~ "screen" || &term =~ "vt100"
+    let &t_ks = "\e[?1h"
+endif
