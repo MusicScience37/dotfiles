@@ -1,4 +1,3 @@
 #!/bin/bash
 
-git branch --merged | xargs -I % git branch -d %
-
+git branch --merged | grep -vE '^\*' | xargs -I % git branch -d %
